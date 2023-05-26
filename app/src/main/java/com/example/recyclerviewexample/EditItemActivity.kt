@@ -3,8 +3,8 @@ package com.example.recyclerviewexample
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
+import android.view.Menu
+import android.view.MenuItem
 import com.example.recyclerviewexample.databinding.ActivityEditItemBinding
 
 class EditItemActivity : AppCompatActivity() {
@@ -17,7 +17,38 @@ class EditItemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEditItemBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Back to Home"
         initButton()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            android.R.id.home -> finish()
+            R.id.save -> {
+                binding.apply {
+                    val item = Item(imageId, edTitle.text.toString(), edDescription.text.toString())
+                    val editIntent = Intent().apply {
+                        putExtra("item", item)
+                    }
+                    setResult(RESULT_OK,editIntent)
+                    finish()
+                }
+
+            }
+            R.id.sync ->{
+
+            }
+            R.id.search ->{
+
+            }
+        }
+        return true
     }
 
     private fun initButton() = with(binding){
