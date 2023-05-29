@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+  <item android:title="Category 1">
+      <menu>
+        <item android:title="Save" android:id="@+id/saveItemNavView" android:icon="@drawable/ic_save"/>
+        <item android:title="Item 1" android:id="@+id/item1NavView" android:icon="@drawable/ic_save"/>
+        <item android:title="Item 2" android:id="@+id/item2NavView" android:icon="@drawable/ic_save"/>
+        <item android:title="Item 3" android:id="@+id/item3NavView" android:icon="@drawable/ic_save"/>
+      </menu>
+  </item>
+    <item android:title="Category 2">
+        <menu>
+            <item android:title="Edit Item" android:id="@+id/editItemNavView" android:icon="@drawable/ic__add_box"/>
+            <item android:title="Item 21" android:id="@+id/item21NavView" android:icon="@drawable/ic_save"/>
+            <item android:title="Item 22" android:id="@+id/item22NavView" android:icon="@drawable/ic_save"/>
+            <item android:title="Item 23" android:id="@+id/item23NavView" android:icon="@drawable/ic_save"/>
+        </menu>
+    </item>
+
+</menu>
